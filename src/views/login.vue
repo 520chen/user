@@ -47,7 +47,7 @@ export default {
       this.$refs[form].validate((valid)=>{
         if(valid) {
           this.$message.success('登录成功！');
-          this.$router.push('/home')
+          this.$router.push('/user-list')
         }
       })
     }
@@ -58,7 +58,7 @@ export default {
 <style scoped>
 .login {
   height: 100%;
-  background: url('../assets/bg4.png');
+  background: url('../assets/login.png');
 }
 
 .loginForm {

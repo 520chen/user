@@ -2,7 +2,7 @@
 <div class="user">
   <!-- 搜索 -->
   <el-form ref="searchForm" :model="searchForm" label-width="80px" inline>
-    <el-form-item label="用户名">
+    <el-form-item label="英雄名">
       <el-input v-model="searchForm.name" clearable></el-input>
     </el-form-item>
     <el-form-item label="地址">
@@ -21,7 +21,7 @@
   <!-- 表格 -->
   <el-table :data="tableData" style="width: 100%" border>
     <el-table-column prop="id" label="id" align="center" width="80"></el-table-column>
-    <el-table-column prop="name" label="用户名" align="center" width="120"></el-table-column>
+    <el-table-column prop="name" label="英雄名" align="center" width="120"></el-table-column>
     <el-table-column prop="address" label="地址" align="center"></el-table-column>
     <el-table-column label="操作" align="center" width="220">
       <template slot-scope="scope">
@@ -33,7 +33,7 @@
   <!-- 新增 -->
   <el-dialog :title="title" :visible.sync="dialogVisible" width="600px">
     <el-form ref="addForm" :model="addForm" :rules="addRules">
-      <el-form-item label="用户名" label-width="100px" prop="name">
+      <el-form-item label="英雄名" label-width="100px" prop="name">
         <el-input v-model="addForm.name" clearable></el-input>
       </el-form-item>
       <el-form-item label="地址" label-width="100px" prop="address">
@@ -56,7 +56,7 @@ import {
   deletUser
 } from '../../request/api'
 export default {
-  name: 'area-select',
+  name: 'user-list',
   data() {
     return {
       tableData: [],
@@ -73,7 +73,7 @@ export default {
       addRules: {
         name: [{
           required: true,
-          message: '用户名不能为空！'
+          message: '英雄名不能为空！'
         }],
         address: [{
           required: true,
@@ -136,7 +136,7 @@ export default {
       console.log(row)
     },
     deletUser(id) {
-      this.$confirm('确定删除当前用户吗?', '提示', {
+      this.$confirm('确定删除当前英雄吗?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

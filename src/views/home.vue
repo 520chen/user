@@ -3,25 +3,25 @@
   <el-container>
     <el-aside width="200px">
       <div class="logo">
-        <img src="../assets/bg3.jpg" alt="">
+        <img src="../assets/logo.png" alt="">
       </div>
       <el-menu default-active="1" class="el-menu-vertical-demo" :router="true" @select="selectMenu">
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-menu"></i>
-            <span>用户列表</span>
+            <span>英雄管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="/user-list">用户列表</el-menu-item>
+            <el-menu-item index="/user-list">英雄列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-menu"></i>
-            <span>测试功能</span>
+            <span>英雄图片</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="/map">高德地图</el-menu-item>
+            <!-- <el-menu-item index="/map">高德地图</el-menu-item> -->
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -79,7 +79,7 @@ export default {
 }
 .logo {
   width: 200px;
-  height: 60px;
+  height: 100px;
 }
 .logo img {
   width: 100%;

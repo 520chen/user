@@ -11,7 +11,7 @@ export default new Router({
     },
     {
       path:'/',
-      redirect:'/home'
+      redirect:'/login'
     },
     {
       path: '/home',
@@ -22,11 +22,6 @@ export default new Router({
           path: '/user-list',
           name: 'user-list',
           component: () => import('@/views/user/user-list')
-        },
-        {
-          path: '/map',
-          name: 'map',
-          component: () => import('@/components/map')
         },
       ]
     },
