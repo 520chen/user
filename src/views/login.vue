@@ -37,8 +37,8 @@ export default {
         }]
       },
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       }
     }
   },
@@ -47,7 +47,7 @@ export default {
       this.$refs[form].validate((valid)=>{
         if(valid) {
           this.$message.success('登录成功！');
-          this.$router.push('/user-list')
+          this.$router.push('/home')
         }
       })
     }

@@ -10,18 +10,27 @@ export default new Router({
       component: () => import('@/views/login.vue')
     },
     {
-      path:'/',
-      redirect:'/login'
+      path: '/',
+      redirect: '/login'
     },
     {
       path: '/home',
-      name:'home',
+      name: 'home',
       component: () => import('@/views/home.vue'),
       children: [
         {
+          path: '/home',
+          redirect: '/welcome'
+        },
+        {
+          path: '/welcome',
+          name: 'welcome',
+          component: () => import('@/views/welcome.vue')
+        },
+        {
           path: '/user-list',
           name: 'user-list',
-          component: () => import('@/views/user/user-list')
+          component: () => import('@/views/user/user-list.vue')
         },
       ]
     },

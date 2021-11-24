@@ -17,6 +17,9 @@ import QS from 'qs'; // 引入qs模块，用来序列化post类型的数据
 // 请求超时时间
 axios.defaults.timeout = 10000;
 
+// 请求地址
+axios.defaults.baseURL = "http://localhost:8888"
+
 // post请求头
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 

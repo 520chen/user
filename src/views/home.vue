@@ -27,7 +27,12 @@
       </el-menu>
     </el-aside>
     <el-container>
-      <el-header>测试后台管理系统</el-header>
+      <el-header>
+        <div class="title">英雄联盟人物管理</div>
+        <div class="logout">
+          <el-button type="text" @click="logout">退出</el-button>
+        </div>
+      </el-header>
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -51,8 +56,22 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
-    selectMenu(key, keyPath){
+    selectMenu(key, keyPath) {
       console.log(key, keyPath);
+    },
+    logout() {
+      this.$confirm('是否退出登录?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$router.push('/login')
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消'
+        });
+      });
     }
   }
 }
@@ -61,8 +80,6 @@ export default {
 <style scoped>
 .home {
   height: 100%;
-  /* background: url('../assets/bg1.jpg') no-repeat;
-  background-size: cover; */
 }
 
 .el-container {
@@ -70,17 +87,24 @@ export default {
 }
 
 .el-header {
-  text-align: center;
+  position: relative;
   line-height: 60px;
-}
-.el-header .title {
   text-align: center;
-  color: #000;
+  background-color: skyblue;
+  color: #fff;
 }
+
+.logout {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
 .logo {
   width: 200px;
   height: 100px;
 }
+
 .logo img {
   width: 100%;
   height: 100%;
